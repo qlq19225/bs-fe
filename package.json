@@ -4,7 +4,7 @@
   "description": "前端代码",
   "main": "index.js",
   "scripts": {
-    "dev":"set WEBPACK_ENV=dev && webpack-dev-server --inline --port 8088",
+    "dev": "set WEBPACK_ENV=dev && webpack-dev-server --inline --port 8080 --host 0.0.0.0",
     "dist": "set WEBPACK_ENV=online && webpack -p"
   },
   "repository": {
@@ -27,5 +27,9 @@
     "url-loader": "^0.5.8",
     "webpack": "^1.15.0",
     "webpack-dev-server": "^1.16.5"
+  },
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "hogan": "^1.0.2"
   }
 }
