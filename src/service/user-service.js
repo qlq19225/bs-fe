@@ -24,11 +24,20 @@ var _user = {
             error   : reject
         });
     },
-     // 用户注册
+    // 用户注册
     register : function(userInfo, resolve, reject){
         _bs.request({
             url     : _bs.getServerUrl('/user/register.do'),
             data    : userInfo,
+            method  : 'POST',
+            success : resolve,
+            error   : reject
+        });
+    },
+    // 检查登录状态
+    checkLogin : function(resolve, reject){
+        _bs.request({
+            url     : _bs.getServerUrl('/user/get_user_info.do'),
             method  : 'POST',
             success : resolve,
             error   : reject
@@ -95,5 +104,14 @@ var _user = {
             error   : reject
         });
     },
+    // 登出
+    logout : function(resolve, reject){
+        _bs.request({
+            url     : _bs.getServerUrl('/user/logout.do'),
+            method  : 'POST',
+            success : resolve,
+            error   : reject
+        });
+    }
 }
 module.exports = _user;
